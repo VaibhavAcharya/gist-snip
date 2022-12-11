@@ -9,7 +9,7 @@ With GistSnip, you can:
 - 📈 Save time and improve your coding efficiency
 
 ## Demo 📽
-![demo](demo.gif)
+![demo](./images/demo.gif)
 
 ## Installation 📦
 

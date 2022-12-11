@@ -14,6 +14,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	});
 
 	const items: vscode.CompletionItem[] = [];
+	const supportedLanguages = new Set<string>(["*"]);
 
 	const [{data: gistsOfOwn}, {data: gistsStared}] = await Promise.all([
 		octokit.gists.list(),
@@ -63,16 +64,19 @@ export async function activate(context: vscode.ExtensionContext) {
 			completionItem.documentation = documentationMarkdown;
 			
 			items.push(completionItem);
+			if (file.language) {
+				supportedLanguages.add(file.language.toLowerCase()); 
+			}
 		}
 	}
 	
-	const completionProvider = vscode.languages.registerCompletionItemProvider(
-		'*',
+	const completionProvider = vscode.languages.registerCompletionItemProvider(Array.from(supportedLanguages),
 		{
 			async provideCompletionItems() {
 				return items;
 			}
-		}
+		},
+
 	);
 
 	context.subscriptions.push(disposable);

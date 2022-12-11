@@ -2,7 +2,7 @@
 	"name": "gist-snip",
 	"displayName": "Gist Snip",
 	"description": "Use your GitHub gists as autocomplete snippets.",
-	"icon": "./images/logo.png",
+	"icon": "images/logo.png",
 	"galleryBanner": {
 		"color": "#000000",
 		"theme": "dark"
