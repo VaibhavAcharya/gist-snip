@@ -1,0 +1,68 @@
+{
+	"name": "gist-snip",
+	"displayName": "Gist Snip",
+	"description": "Use your GitHub gists as autocomplete snippets.",
+	"icon": "./images/logo.png",
+	"galleryBanner": {
+		"color": "#000000",
+		"theme": "dark"
+	},
+	"version": "0.0.1",
+	"publisher": "vaibhavacharya",
+	"author": {
+		"name": "Vaibhav Acharya",
+		"email": "vaibhavacharya111@gmail.com",
+		"url": "https://www.twitter.com/VaibhavAcharya_"
+	},
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"private": true,
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/VaibhavAcharya/gist-snip"
+	},
+	"bugs": {
+		"url": "https://github.com/VaibhavAcharya/gist-snip/issues"
+	},
+	"categories": [
+		"Snippets",
+		"Other"
+	],
+	"keywords": [
+		"github",
+		"gists",
+		"snippets",
+		"autocomplete"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.authenticateWithGithub",
+				"title": "Gist Snip: Authenticate with Github"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint \"src/**/*.ts\"",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^16.11.7",
+		"@types/vscode": "1.74.0",
+		"@typescript-eslint/eslint-plugin": "^5.42.0",
+		"@typescript-eslint/parser": "^5.42.0",
+		"eslint": "^8.26.0",
+		"typescript": "^4.8.4"
+	},
+	"dependencies": {
+		"@octokit/rest": "^18.0.0"
+	}
+}
